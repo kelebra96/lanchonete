@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <title>Tutti's Burger</title>
+    <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/cardapio.css">
+</head>
+
+<body>
+    <div class="mycontainer">
+        <img src="/assets/fundo.jpg" alt="fundo" class="fundo">
+        <div class="cardi">
+            <div class="row my-4 mx-3 justify-content-between align-items-center">
+                <div class="col text-center">
+                    <img src="assets/logo.svg" alt="logo" class="logo">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col mx-3"><p>Aberto até as 23:00h</p></div>
+                <div class="col mx-3"><p>Pedido min. R$23,00</p></div>
+            </div>
+            <div class="mx-4">
+                <hr class="border border-danger border-1 opacity-50">
+            </div>
+            <div class="cardBody">
+                <div class="cardapio">
+                    <div class="cardapioItens ">
+                        <div class="item ingrediente ">
+                            <div class="row align-items-center justify-content-between">
+                                <div class="col-3 p-2 text-center">
+                                    <img src="assets/x-tudo.jpg" alt="">
+                                </div>
+                                <div class="col-3 p-2 text-center">
+                                    <div class="row">
+                                        <h3 class="">X-Tudo</h3>
+                                    </div>
+                                    <div class="row">
+                                        <i class="bi bi-info-circle-fill" id="inf"></i>
+                                    </div>                                 
+                                    </div>
+                                <div class="col-3 text-center">
+                                    <strong>R$ 20,00</strong>
+                                </div>
+                                <div class="col-3 text-center">
+                                    <button class="btn 
+                                    text-white btnPlus">
+                                        <i class="bi bi-cart3"></i>
+                                        +
+                                    </button>
+                                </div>
+                            </div>
+                            <dialog>
+                                <strong>Ingredientes:</strong>
+                                <p>Pão, hambúrguer, queijo, presunto, ovo, bacon, alface, tomate, milho, ervilha, batata palha, maionese, ketchup e mostarda.</p>
+                                <button class="btn btn-danger mt-3 text-center" id="close">ok</button>
+                            </dialog>                                                    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const button = document.querySelector('#inf');
+        const modal = document.querySelector('dialog');
+        const close = document.querySelector('#close');
+        button.onclick = function () {
+            modal.showModal();
+        }
+        close.onclick = function () {
+            modal.close();
+        }
+    </script>
+    <script src="bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

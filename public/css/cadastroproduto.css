@@ -1,0 +1,22 @@
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    background: #ffd700;
+}
+#titulo{
+    text-align: center;
+    font-size: 2.2em;
+    margin-top: 10px;
+    font-weight: bold;
+}
+#btnCadstrar{
+    background: #9a402b;
+    color: #ffffff;
+    font-size: 1.5em;
+    font-weight: bold;
+    height: 3.5em;
+    box-shadow: 0px 2px 5px #000000;    
+}

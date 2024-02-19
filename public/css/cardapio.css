@@ -1,0 +1,94 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.mycontainer {
+    width: 100%;
+    position: relative;
+}
+
+.mycontainer h1 {
+    text-align: center;
+    font-size: 3em;
+    margin-top: 10px;
+}
+
+.fundo {
+    width: 100%;
+    height: 40vh;
+}
+
+.cardi {
+    width: 100%;
+    height: 60vh;
+    position: absolute;
+    top: 60%;
+    border-radius: 60px 60px 0px 0px;
+    background-color: #fff;
+
+}
+
+.logo {
+    width: 90px
+}
+
+.cardBody {
+    width: 90%;
+    height: 647px;
+    overflow: hidden;
+
+}
+
+.cardBody .cardapioItens {
+    width: 99%;
+    height: 300px;
+    margin: 5px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.cardBody .item {
+    display: inline-flexbox;
+}
+
+.item img {
+    width: 80px;
+}
+
+.item p {
+    margin: 0;
+    padding: 0;
+    font-size: .8em;
+    margin-left: 10px;
+}
+
+.btn {
+    width: 70px;
+    font-weight: bold;
+}
+
+.btnPlus {
+    width: 90%;
+    height: 50px;
+    background: #295d4c;
+    box-shadow: 1px 3px 1px #494848;
+}
+
+#inf {
+    color: #9a402b;
+    font-size: 1.5em;
+}
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+dialog {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+
+}
