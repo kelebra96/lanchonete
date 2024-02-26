@@ -1,18 +1,17 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
+require("dotenv").config();
 
-function connectToDatabase() {
-  mongoose.connect('mongodb://localhost/mydatabase', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  });
+mongoose.set("strictQuery", true);
 
-  const db = mongoose.connection;
+main().catch((err) => console.log(err));
 
-  db.on('error', console.error.bind(console, 'Connection error:'));
-  db.once('open', () => {
-    console.log('Connected to the database');
-  });
+async function main() {
+  await mongoose.connect(
+    `mongodb+srv://${process.env.DBUSER}:${process.env.DBPASS}@cluster0.usl9j83.mongodb.net/?retryWrites=true&w=majority`
+  );
+
+  console.log("Conectado com sucesso ao MongoDb Atlas!");
 }
-mongoose.connect('mongodb://localhost:27017/lanche', { useNewUrlParser: true, useUnifiedTopology: true });
 
+module.exports = main;

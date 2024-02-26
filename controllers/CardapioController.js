@@ -6,4 +6,3 @@ router.get('/cardapio', (req, res) => {
 });
 
 
-module.exports = router;

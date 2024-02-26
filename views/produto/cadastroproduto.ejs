@@ -14,28 +14,28 @@
         <img src="assets/logo.svg" alt="logo" class="rounded mx-auto d-block mt-5"> 
         <h3 id="titulo">Cadastro de Produtos</h3> 
         <hr class="border border-danger border-1 opacity-50">
-        <form action="cadastroproduto" method="post">
+        <form action="/createproduct" method="post" enctype="multipart/form-data">
             <div class="form-group mb-2">
                 <label for="nome">Nome do Produto</label>
-                <input type="text" class="form-control" id="nome" placeholder="Nome do Produto" name="nome">
+                <input type="text" class="form-control" id="nome" placeholder="Nome do Produto" name="name" required>
             </div>
             <div class="form-group mb-2">
                 <label for="preoo">Preço</label>
-                <input type="text" class="form-control" id="preco" placeholder="Preço" name="preco">
+                <input type="text" class="form-control" id="preco" placeholder="Preço" name="price" required>
             </div>
             <div class="form-group mb-2">
                 <label for="image">Imagem do produto</label>
-                <input type="file" class="form-control-file" id="image" name="image">
+                <input type="file" class="form-control-file" id="file" name="src" required>
             </div>
             <div class="form-group mb-2">
                 <label for="descricao">Ingredientes</label>
-                <textarea class="form-control" id="descricao" rows="3" name="ingrediente"></textarea>
+                <textarea class="form-control" id="descricao" rows="3" name="ingredients" required></textarea>
             </div>
             <div class="d-grid gap-2 mt-3">
                 <button type="submit" class="btn" id="btnCadstrar">Cadastrar</button>                
             </div></form>      
     </div>
     <script src="bootstrap/dist/js/bootstrap.min.js"></script>
-    
+
 </body>
 </html>

@@ -77,9 +77,9 @@ body {
     box-shadow: 1px 3px 1px #494848;
 }
 
-#inf {
+.inf {
     color: #9a402b;
-    font-size: 1.5em;
+    font-size: 1.2em;
 }
 
 dialog::backdrop {

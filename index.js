@@ -1,29 +1,20 @@
-const express = require('express');
+const express = require("express");
 const app = express();
-const port = 80
 
-//File Static
-app.use(express.static('public'));
-app.use(express.urlencoded({ extended: true }));
+require("dotenv").config();
+require("./database/db");
 app.use(express.json());
-app.set('view engine', 'ejs');
+app.use(express.urlencoded({ extended: false }));
+app.use(express.static("public"));
+app.set("view engine", "ejs");
 
 
-//Controllers
-const HomeController = require('./controllers/HomeController');
-const CardapioController = require('./controllers/CardapioController');
-const ProdutoController = require('./controllers/ProdutoController');
-//Rotas
-app.use('/', HomeController);
-app.use('/', CardapioController);
-app.use('/', ProdutoController);
+const port = process.env.PORT || 3000;
 
+const produtoRouter = require("./routes/produto");
 
-
-
-
-
+app.use("/", produtoRouter);
 
 app.listen(port, () => {
-    console.log(`Servidor Web rodando na porta ${port}`)
+  console.log(`Server started on http://localhost:${port}`);
 });
