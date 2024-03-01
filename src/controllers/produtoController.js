@@ -32,8 +32,6 @@ exports.create = async (req, res) => {
   }
 };
 
-
-
 exports.remove = async (req, res) => {
   try {
     const picture = await Picture.findById(req.params.id);
