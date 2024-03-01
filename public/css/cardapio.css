@@ -64,6 +64,9 @@ body {
     font-size: .8em;
     margin-left: 10px;
 }
+h3{
+    font-size: 1.0em;
+}
 
 .btn {
     width: 70px;
@@ -71,7 +74,6 @@ body {
 }
 
 .btnPlus {
-    width: 90%;
     height: 50px;
     background: #295d4c;
     box-shadow: 1px 3px 1px #494848;
@@ -79,7 +81,7 @@ body {
 
 .inf {
     color: #9a402b;
-    font-size: 1.2em;
+    font-size: 1.0em;
 }
 
 dialog::backdrop {

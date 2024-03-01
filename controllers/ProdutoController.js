@@ -8,27 +8,29 @@ exports.index = (req, res) => {
 exports.create = async (req, res) => {
   try {
     const { name, price, ingredients } = req.body;
-    console.log(req.body);
 
     if (!req.file) {
       throw new Error("Arquivo não enviado");
     }
+     
 
+    const relativePath = `\\uploads\\${req.file.filename}`;
     const file = req.file;
     const produto = new Produto({
       name,
       price,
       ingredients,
-      src: file.path,
+      src: relativePath, // Use o caminho relativo aqui
     });
 
     await produto.save();
-    res.json(produto);
+    res.redirect("/produto");
   } catch (err) {
     res.status(500).json({ message: "Erro ao salvar a imagem." + err });
     console.log(err);
   }
 };
+
 
 exports.remove = async (req, res) => {
   try {
