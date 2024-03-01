@@ -5,6 +5,7 @@ exports.index = (req, res) => {
   res.render("produto/cadastroproduto");
 };
 
+// No seu controller, quando for salvar o produto
 exports.create = async (req, res) => {
   try {
     const { name, price, ingredients } = req.body;
@@ -12,24 +13,25 @@ exports.create = async (req, res) => {
     if (!req.file) {
       throw new Error("Arquivo não enviado");
     }
-     
 
+    // Aqui você ajusta o caminho antes de salvar no banco
     const relativePath = `\\uploads\\${req.file.filename}`;
-    const file = req.file;
+
     const produto = new Produto({
       name,
       price,
       ingredients,
-      src: relativePath, // Use o caminho relativo aqui
+      src: relativePath, // Use o caminho ajustado
     });
 
     await produto.save();
-    res.redirect("/produto");
+    res.json(produto);
   } catch (err) {
     res.status(500).json({ message: "Erro ao salvar a imagem." + err });
     console.log(err);
   }
 };
+
 
 
 exports.remove = async (req, res) => {
